@@ -1,5 +1,3 @@
-// This file defines the "contract" between our frontend and backend.
-
 export interface Flight {
   id: number;
   airline: string;
@@ -30,9 +28,41 @@ export interface ChartDataPoint {
   price: number;
 }
 
+export interface HeatmapRoute {
+    from: string;
+    to: string;
+    status: 'green' | 'yellow' | 'red';
+    price: string;
+}
+
+export interface Mover {
+    route?: string;
+    airline?: string;
+    drop?: string;
+    price?: string;
+    city?: string;
+    flights?: number;
+    change?: string;
+}
+
+export interface TrendChartData {
+    [route: string]: {
+        day: number;
+        minPrice: number;
+        avgPrice: number;
+        maxPrice: number;
+    }[];
+}
+
 export interface ApiResponse {
+  airfareHeatmap: HeatmapRoute[];
+  topMovers: {
+      priceDrops: Mover[];
+      highDemand: Mover[];
+  };
   insightCards: InsightCardsData;
   aiAnalystReport: string;
+  detailedTrendChart: TrendChartData;
   flightPriceChart: ChartDataPoint[];
   flightDataTable: Flight[];
 }
