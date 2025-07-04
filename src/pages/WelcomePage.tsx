@@ -385,7 +385,7 @@ export function WelcomePage() {
         </section>
         {/* Footer */}
         <footer className="bg-white py-6 text-center text-gray-500 text-sm border-t border-gray-100">
-          <p>© 2023 Airline Analyzer. All rights reserved.</p>
+          <p>© 2025 Airline Analyzer. All rights reserved.</p>
         </footer>
       </div>
     </div>;
