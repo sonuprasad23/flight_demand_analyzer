@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { Dashboard } from '../components/Dashboard';
 import { Sidebar } from '../components/Sidebar';
 import { ChatBot } from '../components/ChatBot';
+import { Dashboard } from '../components/Dashboard';
 import { ApiResponse } from '../types';
-import { Menu, Plane } from 'lucide-react';
 import { ThemeToggle } from '../components/ThemeToggle';
+import { Menu, Plane } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export function DashboardPage() {
@@ -34,7 +34,7 @@ export function DashboardPage() {
             const response = await axios.get(`${baseUrl}/api/dashboard-data`, { params: filters });
             setDashboardData(response.data);
         } catch (e: any) {
-            setError(e.response?.data?.detail || "Failed to fetch dashboard data. The route may be unavailable.");
+            setError(e.response?.data?.detail || "Failed to fetch dashboard data. The route may be unavailable or the server is busy.");
             setDashboardData(null);
         } finally {
             setIsLoading(false);
