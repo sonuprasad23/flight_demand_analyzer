@@ -47,13 +47,13 @@ export function NewsletterForm() {
     return (
         <div className="max-w-xl mx-auto">
             <form onSubmit={handleSubmit} className="space-y-4">
-                <input id="email" type="email" value={email} onChange={e => setEmail(e.target.value)} placeholder="Enter your email address" className="w-full px-4 py-3 rounded-md border border-gray-300 focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50" required />
+                <input id="email" type="email" value={email} onChange={e => setEmail(e.target.value)} placeholder="Enter your email address" className="w-full px-4 py-3 rounded-md border border-gray-300 focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50 text-gray-800" required />
                 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                     <select value={travelOrigin} onChange={e => setTravelOrigin(e.target.value)} className="w-full px-4 py-3 rounded-md border border-gray-300 bg-white text-gray-700">
+                     <select value={travelOrigin} onChange={e => setTravelOrigin(e.target.value)} className="w-full px-4 py-3 rounded-md border border-gray-300 bg-white text-gray-800">
                         {popularOrigins.map(o => <option key={o} value={o === popularOrigins[0] ? '' : o}>{o}</option>)}
                      </select>
-                     <input type="date" value={dob} onChange={e => setDob(e.target.value)} className="w-full px-4 py-3 rounded-md border border-gray-300 bg-white text-gray-700" />
+                     <input type="date" value={dob} onChange={e => setDob(e.target.value)} className="w-full px-4 py-3 rounded-md border border-gray-300 bg-white text-gray-800" />
                 </div>
 
                 <div>
