@@ -13,6 +13,7 @@ export function DashboardPage() {
     const [dashboardData, setDashboardData] = useState<ApiResponse | null>(null);
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
+    const [hasSearched, setHasSearched] = useState(false);
 
     const today = new Date();
     const tomorrow = new Date(today);
@@ -26,6 +27,7 @@ export function DashboardPage() {
     });
 
     const handleAnalyze = async () => {
+        setHasSearched(true);
         setIsLoading(true);
         setError(null);
         setSidebarOpen(false);
@@ -74,6 +76,7 @@ export function DashboardPage() {
                         isLoading={isLoading}
                         error={error}
                         filters={filters}
+                        hasSearched={hasSearched}
                     />
                 </main>
             </div>
